@@ -1,0 +1,158 @@
+import { StateCameras } from "../types/camera";
+
+export const cameraDataMock: StateCameras = {
+  cam_001: {
+    camera_id: "cam_001",
+    location: "Pasillo norte",
+    status: "error",
+    stream: "https://placekitten.com/401/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 0,
+    detections: [],
+  },
+  cam_002: {
+    camera_id: "cam_002",
+    location: "Entrada principal",
+    status: "active",
+    stream: "https://placekitten.com/400/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 0,
+    detections: [
+      {
+        class: "persona",
+        confidence: 0.88,
+        box: { x1: 132, y1: 110, x2: 220, y2: 300 },
+      },
+      {
+        class: "objeto_sospechoso",
+        confidence: 0.76,
+        box: { x1: 320, y1: 150, x2: 400, y2: 250 },
+      },
+    ],
+  },
+  cam_003: {
+    camera_id: "cam_003",
+    location: "Estacionamiento",
+    status: "inactive",
+    stream: "https://placekitten.com/402/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 2,
+    detections: [],
+  },
+  cam_004: {
+    camera_id: "cam_004",
+    location: "Escalera de emergencia",
+    status: "active",
+    stream: "https://placekitten.com/403/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 1,
+    detections: [
+      {
+        class: "persona",
+        confidence: 0.92,
+        box: { x1: 100, y1: 120, x2: 200, y2: 300 },
+      },
+    ],
+  },
+  cam_005: {
+    camera_id: "cam_005",
+    location: "Recepción",
+    status: "error",
+    stream: "https://placekitten.com/404/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 0,
+    detections: [],
+  },
+  cam_006: {
+    camera_id: "cam_006",
+    location: "Salón A",
+    status: "active",
+    stream: "https://placekitten.com/405/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 0,
+    detections: [],
+  },
+  cam_007: {
+    camera_id: "cam_007",
+    location: "Pasillo sur",
+    status: "active",
+    stream: "https://placekitten.com/406/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 3,
+    detections: [
+      {
+        class: "persona",
+        confidence: 0.84,
+        box: { x1: 150, y1: 130, x2: 240, y2: 310 },
+      },
+      {
+        class: "carro",
+        confidence: 0.79,
+        box: { x1: 300, y1: 200, x2: 400, y2: 300 },
+      },
+    ],
+  },
+  cam_008: {
+    camera_id: "cam_008",
+    location: "Salón B",
+    status: "inactive",
+    stream: "https://placekitten.com/407/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 0,
+    detections: [],
+  },
+  cam_009: {
+    camera_id: "cam_009",
+    location: "Área de carga",
+    status: "error",
+    stream: "https://placekitten.com/408/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 7,
+    detections: [
+      {
+        class: "persona",
+        confidence: 0.9,
+        box: { x1: 120, y1: 100, x2: 210, y2: 290 },
+      },
+    ],
+  },
+  cam_010: {
+    camera_id: "cam_010",
+    location: "Laboratorio de informática",
+    status: "active",
+    stream: "https://placekitten.com/409/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 4,
+    detections: [
+      {
+        class: "persona",
+        confidence: 0.85,
+        box: { x1: 130, y1: 115, x2: 215, y2: 295 },
+      },
+    ],
+  },
+  cam_011: {
+    camera_id: "cam_011",
+    location: "Azotea",
+    status: "inactive",
+    stream: "https://placekitten.com/410/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 0,
+    detections: [],
+  },
+  cam_012: {
+    camera_id: "cam_012",
+    location: "Depósito",
+    status: "error",
+    stream: "https://placekitten.com/411/225",
+    timestamp: "2025-05-03T12:45:22Z",
+    person_count: 0,
+    detections: [
+      {
+        class: "objeto_sospechoso",
+        confidence: 0.81,
+        box: { x1: 300, y1: 180, x2: 390, y2: 270 },
+      },
+    ],
+  },
+};
