@@ -4,6 +4,8 @@ import time
 # OPCIONES de conexión (elige la adecuada)
 # HTTP snapshot (solo si la cámara envía una imagen continua como MJPEG)
 http_url = "http://192.168.90.107:8080/video"  # o /shot.jpg
+# http_url = "https://hd-auth.skylinewebcams.com/live.m3u8?a=e3un129a5kaep7oj8ih8eo5qj3"  # o /shot.jpg
+          # https://hd-auth.skylinewebcams.com/live.m3u8?a=e3un129a5kaep7oj8ih8eo5qj3
 # RTSP (comentar si no lo usas)
 # rtsp_url = "rtsp://192.168.90.107:554/h264_ulaw.sdp"
 

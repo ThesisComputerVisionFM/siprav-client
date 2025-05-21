@@ -5,9 +5,8 @@ import base64
 import cv2
 from datetime import datetime
 from app.services.camera_registry import cameras
-from app.models.yolo_models import model_suspicious
+from app.models.yolo_models import model_suspicious, model_arms, model_coco
 from app.core.socket_server import sio
-
 
 async def camera_emitter():
     while True:
@@ -54,49 +53,4 @@ async def camera_emitter():
         if payload:
             await sio.emit("cameras", payload)
 
-        await asyncio.sleep(0.1)
-
-"""
-async def camera_emitter():
-    posibles_eventos = ["persona", "caída", "actividad sospechosa", "arma", "incendio"]
-
-    while True:
-        payload = []
-
-        for cam in cameras.values():
-            frame = cam.get_frame()
-            if frame is None:
-                continue
-
-            # ⚠️ Simular detecciones de eventos aleatorios
-            evento_simulado = random.choice(posibles_eventos)
-            detections = [{
-                "class": evento_simulado,
-                "confidence": round(random.uniform(0.75, 0.99), 2),
-                "box": {"x1": 100, "y1": 100, "x2": 200, "y2": 200}
-            }]
-
-            # Guardar en el objeto de la cámara (para alert_stream.py)
-            cam.set_detections(detections)
-
-            # Codificar la imagen
-            _, buffer = cv2.imencode('.jpg', frame)
-            b64_img = base64.b64encode(buffer).decode('utf-8')
-
-            cam_data = {
-                "camera_id": cam.camera_id,
-                "location": cam.location,
-                "status": cam.status,
-                "timestamp": datetime.utcnow().isoformat() + "Z",
-                "stream": f"data:image/jpeg;base64,{b64_img}",
-                "person_count": 5,
-                "detections": detections
-            }
-
-            payload.append(cam_data)
-
-        if payload:
-            await sio.emit("cameras", payload)
-
-        await asyncio.sleep(2)
-"""
+        await asyncio.sleep(0.001)

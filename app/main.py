@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],)
 
 # Eventos de arranque: iniciar las tareas de transmisión de cámaras y alertas
- 
+
 @app.on_event("startup")
 async def startup_tasks():
     print("✅ Alert emitter activo")
@@ -33,7 +33,6 @@ async def startup_tasks():
     asyncio.create_task(alert_emitter())
 
 # Ruta raíz simple para probar que el backend responde
-
 
 @app.get("/")
 def read_root():
